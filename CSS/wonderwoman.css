@@ -6,7 +6,7 @@ body {
 }
 
 heading {
-	padding-top: 15px;
+	padding-top: 20px;
 	background-color: rgb(5, 5, 107);
 	text-align: center;
 	display: inherit;
@@ -23,19 +23,31 @@ heading h1 {
 
 heading img {
 	border-radius: 100px;
-	border: 10px solid white;
+	border: 10px solid rgb(109, 0, 0);
+	/*-moz-outline-radius: 22%;
+	outline: 10px solid white;*/
+	box-shadow: 0 0 0 10px white;
 }
 
 main {
-	max-width: 800px;
+	max-width: 950px;
 	margin: 0 auto;
 	padding: 10px 20px;
 }
 main img {
 	max-width: 100%;
 }
-img.right {
+img.img1 {
 	float: right;
+}
+img.pic2 {
+	text-align: center;
+	margin: 30px 0 30px 170px;
+	padding: 10px;
+	border: 10px solid navy;
+}
+.space {
+	padding-top: 25px;
 }
 h2 {
 	font-size: 35px;
