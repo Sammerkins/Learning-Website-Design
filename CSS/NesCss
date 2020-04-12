@@ -1,0 +1,5 @@
+body{
+type="text/css"
+  background-image: Images/MarioTall!;
+  background-repeat: no-repeat;
+}
