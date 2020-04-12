@@ -1,7 +1,15 @@
+<!DOCTYPE html>
 <!-- index.html -->
 <html>
 	<head>
-		<link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css" />
+		<title>Mario!</title>
+		<link
+			rel="icon"
+			href="Images/Mario-Pixel-Icon.jpg"
+			<link
+			rel="stylesheet"
+			href="./node_modules/nes.css/css/nes.min.css"
+		/>
 		<link
 			href="https://fonts.googleapis.com/css?family=Press+Start+2P"
 			rel="stylesheet"
@@ -20,14 +28,56 @@
 			}
 			body {
 				background-image: url(Images/Mariotall!.jpg);
-				min-height: 2203px;
+				min-height: 1965px;
 				background-size: cover;
 				background-position: center;
+			}
+			header {
+				padding-top: 40px;
+				text-align: center;
+				background-color: #699cf8;
+			}
+			#hearts {
+				position: fixed;
+				top: 10px;
+				right: 10px;
 			}
 		</style>
 	</head>
 	<body>
-		background-image:
-		<h1>Hello World!</h1>
+		<header>
+			<h1>
+				Welcome <br />
+				To an <br />
+				Interactive Mario World!
+			</h1>
+			<div id="hearts">
+				<i class="nes-icon is-large heart"></i>
+				<i class="nes-icon is-large is-half heart"></i>
+				<i class="nes-icon is-large is-transparent heart"></i>
+			</div>
+		</header>
+
+		<section class="icon-list">
+			<!-- Copyright Nintendo -->
+			<i class="nes-mario"></i>
+			<i class="nes-ash"></i>
+			<i class="nes-pokeball"></i>
+			<i class="nes-bulbasaur"></i>
+			<i class="nes-charmander"></i>
+			<i class="nes-squirtle"></i>
+			<i class="nes-kirby"></i>
+		</section>
+		<section class="icon-list">
+			<!-- heart -->
+
+			<i class="nes-icon is-large heart is-empty"></i>
+
+			<!-- star -->
+			<i class="nes-icon is-large star"></i>
+			<i class="nes-icon is-large star is-half"></i>
+			<i class="nes-icon is-large star is-transparent"></i>
+			<i class="nes-icon is-large star is-empty"></i>
+		</section>
 	</body>
 </html>

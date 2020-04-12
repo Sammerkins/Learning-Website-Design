@@ -1,5 +1,3 @@
-body{
-type="text/css"
-  background-image: Images/MarioTall!;
-  background-repeat: no-repeat;
-}
+ <div class="nes-balloon from-right copied-balloon" :style="copiedBalloon">
+          <p>copied!!</p>
+        </div>
