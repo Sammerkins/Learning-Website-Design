@@ -34,7 +34,7 @@
 			}
 			header {
 				padding-top: 80px;
-				padding-bottom: 80px;
+				padding-bottom: 65px;
 				text-align: center;
 				background-color: #699cf8;
 			}
@@ -42,6 +42,13 @@
 				position: fixed;
 				top: 10px;
 				right: 10px;
+			}
+			#buttons {
+				text-align: center;
+				padding-bottom: 50px;
+			}
+			#Question-box-1 {
+				position: absolute;
 			}
 		</style>
 	</head>
@@ -58,7 +65,19 @@
 				<i class="nes-icon is-large is-transparent heart"></i>
 			</div>
 		</header>
+		<div id="buttons">
+			<a class="nes-btn" href="Mariopage2.html">Next Page!</a>
 
+			<button type="button" class="nes-btn is-primary">Primary</button>
+			<button type="button" class="nes-btn is-success">Success</button>
+			<button type="button" class="nes-btn is-warning">Warning</button>
+			<button type="button" class="nes-btn is-error">Error</button>
+
+			<!--<label class="nes-btn">
+				<span>Click here for Page 2!!!</span>
+				<input type="button" />
+			</label>-->
+		</div>
 		<section class="icon-list">
 			<!-- Copyright Nintendo -->
 			<i class="nes-mario"></i>
@@ -80,5 +99,7 @@
 			<i class="nes-icon is-large star is-transparent"></i>
 			<i class="nes-icon is-large star is-empty"></i>
 		</section>
+
+		<button id="Question-box-1">?</button>
 	</body>
 </html>
