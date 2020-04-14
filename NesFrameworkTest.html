@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!-- index.html -->
-<html>
+<html lang="en">
 	<head>
+		<meta charset="utf-8" />
 		<title>Mario!</title>
 		<link
 			rel="icon"
@@ -53,81 +54,205 @@
 				right: 26%;
 				height: 77px;
 				width: 77px;
+				border-width: 0px;
+				background-color: transparent;
+				color: transparent;
 			}
 			#Question-box-2 {
 				position: absolute;
 				top: 1310px;
-				right: 21%;
+				right: 20.5%;
 				height: 77px;
 				width: 77px;
+				border-width: 0px;
+				background-color: transparent;
+				color: transparent;
+			}
+			#Question-box-3 {
+				position: absolute;
+				top: 1579px;
+				right: 34%;
+				height: 77px;
+				width: 77px;
+				border-width: 0px;
+				background-color: transparent;
+				color: transparent;
+			}
+			#Question-box-4 {
+				position: absolute;
+				top: 1579px;
+				right: 40%;
+				height: 77px;
+				width: 77px;
+				border-width: 0px;
+				background-color: transparent;
+				color: transparent;
+			}
+			#PirannaPlant {
+				position: absolute;
+				top: 1563px;
+				right: 48%;
+				height: 201px;
+				width: 132px;
+				border-width: 0px;
+				background-color: transparent;
+				color: transparent;
+			}
+			#happyBush {
+				position: absolute;
+				top: 1700px;
+				right: 72%;
+				height: 195px;
+				width: 272px;
+				border-width: 0px;
+				background-color: transparent;
+				color: transparent;
+			}
+			#bullet {
+				position: absolute;
+				top: 780px;
+				right: 25%;
+				height: 150px;
+				width: 157px;
+				border-width: 0px;
+				background-color: transparent;
+				color: transparent;
 			}
 			#TurtleDude1 {
 				position: absolute;
 				top: 606px;
-				right: 80%;
+				left: calc(50% - 400px);
 				height: 153px;
 				width: 145px;
 			}
 			#TurtleDude2 {
 				position: absolute;
 				top: 1793px;
-				right: 27%;
+				left: calc(50% + 160px);
 				height: 102px;
-				width: 130px;
+				width: 150px;
 			}
 		</style>
 	</head>
 	<body>
-		<header>
-			<h1>
-				Welcome <br />
-				To an <br />
-				Interactive Mario World!
-			</h1>
-			<div id="hearts">
-				<i class="nes-icon is-large heart"></i>
-				<i class="nes-icon is-large is-half heart"></i>
-				<i class="nes-icon is-large is-transparent heart"></i>
+		<div id="app">
+			<header>
+				<h1>
+					Welcome <br />
+					To an <br />
+					Interactive Mario World!
+				</h1>
+
+				<div id="hearts">
+					<span v-for="value in heartValues">
+						<i
+							v-if="value === 'full'"
+							class="nes-icon is-large heart"
+						></i>
+						<i
+							v-else-if="value === 'half'"
+							class="nes-icon is-large is-half heart"
+						></i>
+						<i
+							v-else
+							class="nes-icon is-large is-transparent heart"
+						></i>
+					</span>
+				</div>
+			</header>
+			<div id="buttons">
+				<a class="nes-btn" href="Mariopage2.html">Next Page!</a>
+
+				<button type="button" class="nes-btn is-primary">
+					Primary
+				</button>
+				<button type="button" class="nes-btn is-success">
+					Success
+				</button>
+				<button type="button" class="nes-btn is-warning">
+					Warning
+				</button>
+				<button type="button" class="nes-btn is-error">Error</button>
+
+				<!--<label class="nes-btn">
+					<span>Click here for Page 2!!!</span>
+					<input type="button" />
+				</label>-->
 			</div>
-		</header>
-		<div id="buttons">
-			<a class="nes-btn" href="Mariopage2.html">Next Page!</a>
+			<section class="icon-list">
+				<!-- Copyright Nintendo -->
+				<i class="nes-mario"></i>
+				<i class="nes-ash"></i>
+				<i class="nes-pokeball"></i>
+				<i class="nes-bulbasaur"></i>
+				<i class="nes-charmander"></i>
+				<i class="nes-squirtle"></i>
+				<i class="nes-kirby"></i>
+			</section>
+			<section class="icon-list">
+				<i class="nes-icon is-large star"></i>
+				<i class="nes-icon is-large star is-half"></i>
+				<i class="nes-icon is-large star is-transparent"></i>
+			</section>
 
-			<button type="button" class="nes-btn is-primary">Primary</button>
-			<button type="button" class="nes-btn is-success">Success</button>
-			<button type="button" class="nes-btn is-warning">Warning</button>
-			<button type="button" class="nes-btn is-error">Error</button>
-
-			<!--<label class="nes-btn">
-				<span>Click here for Page 2!!!</span>
-				<input type="button" />
-			</label>-->
+			<button id="Question-box-1">?</button>
+			<button id="Question-box-2">?</button>
+			<button id="Question-box-3">?</button>
+			<button id="Question-box-4" @click="clickQuestion">?</button>
+			<button id="PirannaPlant">Plant</button>
+			<button id="happyBush">Plant</button>
+			<button id="bullet">Bullet</button>
+			<button id="TurtleDude1" @click="clickKoopa">Turtle</button>
+			<button id="TurtleDude2">Turtle</button>
 		</div>
-		<section class="icon-list">
-			<!-- Copyright Nintendo -->
-			<i class="nes-mario"></i>
-			<i class="nes-ash"></i>
-			<i class="nes-pokeball"></i>
-			<i class="nes-bulbasaur"></i>
-			<i class="nes-charmander"></i>
-			<i class="nes-squirtle"></i>
-			<i class="nes-kirby"></i>
-		</section>
-		<section class="icon-list">
-			<!-- heart -->
 
-			<i class="nes-icon is-large heart is-empty"></i>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			// if you're using vue, then this is the script...
+			new Vue({
+				el: "#app",
+				data: {
+					hearts: 1.5,
+				},
+				methods: {
+					clickKoopa() {
+						this.hearts -= 0.5;
+					},
+					clickQuestion() {
+						this.hearts += 0.5;
+					},
+				},
+				computed: {
+					heartValues() {
+						let s = ["", "", ""];
 
-			<!-- star -->
-			<i class="nes-icon is-large star"></i>
-			<i class="nes-icon is-large star is-half"></i>
-			<i class="nes-icon is-large star is-transparent"></i>
-			<i class="nes-icon is-large star is-empty"></i>
-		</section>
-
-		<button id="Question-box-1">?</button>
-		<button id="Question-box-2">?</button>
-		<button id="TurleDude1">TurtleDude1</button>
-		<button id="TurtleDude2">TurtleDude2</button>
+						if (this.hearts >= 1) {
+							s[0] = "full";
+						} else if (this.hearts === 0.5) {
+							s[0] = "half";
+						} else {
+							s[0] = "none";
+						}
+						if (this.hearts >= 2) {
+							s[1] = "full";
+						} else if (this.hearts === 1.5) {
+							s[1] = "half";
+						} else {
+							s[1] = "none";
+						}
+						if (this.hearts >= 3) {
+							s[2] = "full";
+						} else if (this.hearts === 2.5) {
+							s[2] = "half";
+						} else {
+							s[2] = "none";
+						}
+						console.log(s);
+						return s;
+					},
+				},
+			});
+		</script>
+		<script src="mariopage.js"></script>
 	</body>
 </html>
