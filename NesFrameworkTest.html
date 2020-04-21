@@ -124,6 +124,9 @@
 				left: calc(50% - 400px);
 				height: 153px;
 				width: 145px;
+				border-width: 0px;
+				background-color: transparent;
+				color: transparent;
 			}
 			#TurtleDude2 {
 				position: absolute;
@@ -131,6 +134,9 @@
 				left: calc(50% + 160px);
 				height: 102px;
 				width: 150px;
+				border-width: 0px;
+				background-color: transparent;
+				color: transparent;
 			}
 		</style>
 	</head>
@@ -196,13 +202,13 @@
 			</section>
 
 			<button id="Question-box-1">?</button>
-			<button id="Question-box-2">?</button>
+			<button id="Question-box-2" @click="clickQuestion">?</button>
 			<button id="Question-box-3">?</button>
 			<button id="Question-box-4" @click="clickQuestion">?</button>
-			<button id="PirannaPlant">Plant</button>
+			<button id="PirannaPlant" @click="clickBadguy">Plant</button>
 			<button id="happyBush">Plant</button>
 			<button id="bullet">Bullet</button>
-			<button id="TurtleDude1" @click="clickKoopa">Turtle</button>
+			<button id="TurtleDude1" @click="clickBadguy">Turtle</button>
 			<button id="TurtleDude2">Turtle</button>
 		</div>
 
@@ -215,11 +221,17 @@
 					hearts: 1.5,
 				},
 				methods: {
-					clickKoopa() {
+					clickBadguy() {
 						this.hearts -= 0.5;
+						if (this.hearts < 0) {
+							this.hearts = 0;
+						}
 					},
 					clickQuestion() {
 						this.hearts += 0.5;
+						if (this.hearts > 3) {
+							this.hearts = 3;
+						}
 					},
 				},
 				computed: {
